@@ -23,7 +23,7 @@ productRoutes.get('/:id', (req, res) => {
   }
 });
 
-// POST /api/products - add a new product
+// api/products - add a new product
 productRoutes.post('/', (req, res) => {
   const { id, name, price } = req.body;
   const existing = products.find(item => item.id === id);
@@ -35,7 +35,7 @@ productRoutes.post('/', (req, res) => {
   res.status(201).json(newProduct);
 });
 
-// DELETE /api/products/:id - delete a product by ID
+// api/products/:id - delete a product by ID
 productRoutes.delete('/:id', (req, res) => {
   const index = products.findIndex(item => item.id === req.params.id);
   if (index === -1) {
